@@ -1,3 +1,5 @@
+#!/home/othman/Software/anaconda/envs/udacity-itida/bin/ipython
+
 import time
 import pandas as pd
 import numpy as np
@@ -25,24 +27,24 @@ def get_filters():
     while (check_city):
         global city
         print()
-        city = input("Which city you want to explore its data, (chicago, new york city, washington)? \n")
+        city = input("Which city you want to explore its data, (chicago, new york city, washington)? \n").lower()
         print()
-        check_city = not(city.lower() in CITY_DATA.keys())
+        check_city = not(city in CITY_DATA.keys())
 
 
     # TO DO: get user input for month (all, january, february, ... , june)
     check_month = True
     while(check_month):
-        month = input('Which month you want to filter the data with, (all, january, february, ... , june)? \n')
+        month = input('Which month you want to filter the data with, (all, january, february, ... , june)? \n').lower()
         print()
-        check_month = not(month.lower() in months)
+        check_month = not(month in months)
 
     # TO DO: get user input for day of week (all, monday, tuesday, ... sunday)
     check_week_day = True
     while(check_week_day):
-        day = input('Which day of week you want to filter the data with, (all, monday, tuesday, ... sunday)? \n')
+        day = input('Which day of week you want to filter the data with, (all, monday, tuesday, ... sunday)? \n').lower()
         print()
-        check_week_day = not(day.lower() in week_days)
+        check_week_day = not(day in week_days)
 
 
     print('-'*40)
