@@ -182,9 +182,22 @@ def user_stats(df):
 
     else: print('Year of birth data is not available for Washington DC')
 
-
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
+
+
+def display_data(df):
+    """Displays five lines of raw data."""
+
+    n = 0
+    answer = input('Do you want to display raw data? (yes/no)\n').lower()
+
+    while(answer=='yes'):
+        print(df.iloc[n:n+5])
+        print()
+        n += 5
+        answer = input('Do you want to display another 5 lines of raw data? (yes/no)').lower()
+
 
 
 def main():
@@ -196,6 +209,7 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+        display_data(df)
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
